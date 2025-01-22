@@ -13,7 +13,6 @@ revealOptions:
 
   #  Generative AI
   ## L.01 | Introduction
-  ...
 
   </div>
   </div>
