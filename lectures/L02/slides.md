@@ -40,15 +40,14 @@ revealOptions:
 
 <!--s-->
 
-Objectives: Distributed data preprocessing (SnowFlake), containerized training (Docker), hyperparameter tuning and distributed training strategies
-
-Agenda:
+## Agenda
 
 1. Welcome!
-2. Distributed Data Preprocessing
-    a. SnowFlake
-    b. Data Pipelines
-    c. Data Versioning
+2. Parallel & Distributed Data Preprocessing
+    a. Solutions
+    a. SnowFlake Demo
+    b. Building Data Pipelines
+    c. Dataset Versioning
 3. Containerized Training
     a. Docker
     b. Running your Models
