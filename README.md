@@ -1,27 +1,21 @@
-# MSAI XX Generative AI
+# MSAI 495 Generative AI
 
-Welcome to the MSAI XX Generative AI course! This course is designed to provide a comprehensive overview of generative AI techniques, with a focus on image and text generation. The course will cover foundational knowledge, autoencoders, variational autoencoders, generative adversarial networks, diffusion models, autoregressive models, and multi-modal models. The course will also include hands-on projects and demonstrations to reinforce the concepts learned.
-
-** NOTE FOR QUEST: This course is designed to be run in low resource environments (2 CPU / 8 GB RAM). I don't anticipate extensive usage of GPUs and will provide alternatives for GPU-heavy tasks.  **
-
+Welcome to Generative AI! This course is designed to provide a comprehensive overview of generative AI techniques, with a focus on image and text generation. We will cover foundational knowledge, autoencoders, variational autoencoders, generative adversarial networks, diffusion models, autoregressive models, and multi-modal models. We will also include hands-on projects and demonstrations to reinforce the concepts learned.
 
 ## Schedule
 
-| Week | Date       | Topic                                | Module       | Topics Covered  |
-|------|------------|--------------------------------------|--------------|--------------------------------------------------------------------------------|
-| 1    | --- | Introduction, Environment, and Containerization | Setup | Course structure, generative vs. discriminative modeling, rise of generative AI, containers |
-| 2    | --- | Machine Learning Operations | Setup | Distributed data preprocessing, containerized training, hyperparameter tuning and distributed training strategies |
-| 3    | --- | Foundational Knowledge | Image | Multilayer perceptrons, data preparation, model training, evaluation |
-| 4    | --- | Autoencoders | Image | Autoencoders, variational autoencoders, latent space analysis |
-| 5    | --- | Generative Adversarial Networks | Image | Deep convolutional GANs, bricks dataset, discriminator, generator, WGAN-GP, Wasserstein Loss, gradient penalty, conditional GAN |
-| 6    | --- | Diffusion Models | Image | Denoising diffusion models, forward/reverse process, U-Net denoising model, stable diffusion |
-| 7    | --- | Autoregressive Models | Text | text data handling, RNN, LSTM, GRU, extensions to LSTM, Bidirectional LSTM, Stacked LSTM, attention mechanisms, transformers, text generation metrics |
-| 8    | --- | Autoregressive Models | Text | Encoder vs. Decoder, BERT, GPT-2, T5 architectures |
-| 9    | --- | Multimodal Model Strategies | Text + Image | Image + Text models approaches, CLIP, DALL-E |
-| 10   | --- | Demo Day & Final Exam | Text + Image | Demonstration of top generative AI projects and comprehensive final exam |
-
-
-NOTE: benchmarking and addressing limitations.
+| Week | Date       | Topic   | Module       | Topics Covered  | Modern Architectures | Project Milestone |
+|------|------------|--------------------------------------|--------------|--------------------------------------------------------------------------------| -- | -- |
+| 1    | 04.02.2025 | Introduction, Environment, and Containerization | Setup | Course structure, generative vs. discriminative modeling, containerization, QUEST | -- | -- |
+| 2    | 04.09.2025 | Machine Learning Operations | Setup | Distributed data preprocessing, containerized training, hyperparameter tuning and distributed training strategies | -- | Image Proposal |
+| 3    | 04.16.2025 | Autoencoders | Image | Autoencoders, variational autoencoders, latent space analysis | VAE, $\beta$-VAE, Conditional VAE | -- |
+| 4    | 04.23.2025 | Generative Adversarial Networks | Image | Deep convolutional GANs, discriminators & generators | WGAN-GP, Pro-GAN, StyleGAN | -- |
+| 5    | 04.30.2025 | Diffusion Models | Image | Denoising diffusion models, forward/reverse process, U-Net denoising model | DDIM, Imagen, Stable Diffusion | -- |
+| 6    | 05.07.2025 | Autoregressive Text Models | Text | RNN/LSTM, transformers, distributed text processing, R.A.G. | GPT, BERT, T5 | Image Project |
+| 7    | 05.14.2025 | Forecast Models | Signal | Forecasting, Traditional (SARIMAX), Modern (XGBoost, TiDE) | SARIMAX, XGBoost, TiDE | Text Proposal |
+| 8    | 05.21.2025 | Conditional & Multimodal Model Strategies | Text + Image | Image + Text models approaches | CLIP, DALL-E, BLIP | -- |
+| 9    | 05.28.2025 | Creative Applications & Societal Implications | Text + Image | Generative AI in art, music, and literature, ethical considerations | GPT Storyteller, MusicGen | -- |
+| 10   | 06.04.2025 | Demo Day & Final Exam | Text + Image | Demonstration of top-voted generative AI projects and comprehensive final exam | -- | Text Project |
 
 ## Grading
 
@@ -29,9 +23,9 @@ There is a high emphasis on the practical application of the concepts covered in
 
 | Component | Weight |
 | --- | --- |
-| Attendance & Comprehension Quizzes | 40% |
-| Project Part I (Exhibit) | 20% |
-| Project Part II (Chatbot) | 20% |
+| Attendance & Comprehension Quizzes | 20% |
+| Project Part I (Image) | 30% |
+| Project Part II (Text) | 30% |
 | Exam | 20% |
 
 ------
@@ -53,29 +47,43 @@ There is a high emphasis on the practical application of the concepts covered in
 
 ## Comprehension Quizzes
 
-Comprehension quizzes will take place during lecture to ensure you are following along and attending lectures. These will be graded, and the lowest n scores will be dropped. 
+Graded quizzes will take place during lecture to ensure you are following along and attending lectures. These will be graded, and the lowest 2 scores will be dropped. 
 
 ------
 
 ## Projects
 
-The course will have two projects, each focusing on a different aspect of generative AI. The first project will focus on image generation, while the second project will focus on text generation.
+The course will have two projects, each focusing on a different aspect of generative AI. The first project will focus on image generation, while the second project will focus on text generation. Both projects will have a proposal, the project, and a final report.
 
 ### Baseline Project Criteria
 
-Meeting the basic project criteria will result in a maximum grade of 85% for the project. Details on the baseline project criteria will be provided in the project description.
+Meeting the basic project criteria will result in a maximum grade of 85% for the project. Details on the baseline project criteria will be provided in the project description, but the following will be evaluated:
+
+1. Code quality
+2. Ambition & complexity
 
 ### Extra Project Criteria
 
-Meeting the additional extra project criteria will result in a maximum grade of 100% for the project. Details on the extra project criteria will be provided in the project description.
+Meeting the additional extra project criteria will result in a maximum grade of 100% for the project. Details on the extra project criteria will be provided in the project description, but the following are some high-level ideas:
 
-### Project Part I (Exhibit)
+#### Image Generation
 
-The first project will focus on image generation. You will be required to generate images using a generative model of your choice. You will create a virtual art exhibit and host it online.
+1. ML operations
+- Distributed preprocessing or training pipelines
+- Metrics training & evaluation tracking
+2. Hyperparameter tuning strategies
+3. Creative latent space exploration
+4. Image GUI
 
-### Project Part II (Chatbot)
+#### Text Generation
 
-The second project will focus on text generation, but with the additional option to be multimodal. You will create a chatbot and host it online. 
+1. Multimodal model
+- Text + Image
+- Text + Audio
+- Text + ??
+2. Explainable AI
+3. ML operations (must be different from the first project)
+4. Chatbot GUI
 
 ------
 
@@ -101,5 +109,5 @@ If you are feeling distressed or overwhelmed, please reach out for help. Student
 
 ## Contact Information
 
-Meixi Lu (GA): meixilu2025@u.northwestern.edu
-Joshua D'Arcy (Professor): joshua.darcy@northwestern.edu
+Xinran Li (GA): xinranli2025@u.northwestern.edu<br>
+Joshua D'Arcy (Instructor): joshua.darcy@northwestern.edu

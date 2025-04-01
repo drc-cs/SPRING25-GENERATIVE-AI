@@ -31,7 +31,7 @@ jobs:
         CANVAS_API_TOKEN: ${{ secrets.CANVAS_SECRET }}
       run: |
         CANVAS_URL='https://canvas.northwestern.edu'
-        COURSE_ID=226962
+        COURSE_ID=230487
         API_TOKEN=$CANVAS_API_TOKEN
         HTML_CONTENT=$(<README.html)
         
