@@ -1,4 +1,5 @@
-# MSAI 495 Generative AI
+# MSAI 495 Generative AI 
+[[github link](https://github.com/drc-cs/SPRING25-GENERATIVE-AI)]
 
 Welcome to Generative AI! This course is designed to provide a comprehensive overview of generative AI techniques, with a focus on image and text generation. We will cover foundational knowledge, autoencoders, variational autoencoders, generative adversarial networks, diffusion models, autoregressive models, and multi-modal models. We will also include hands-on projects and demonstrations to reinforce the concepts learned.
 
@@ -6,7 +7,7 @@ Welcome to Generative AI! This course is designed to provide a comprehensive ove
 
 | Week | Date       | Topic   | Module       | Topics Covered  | Modern Architectures | Project Milestone |
 |------|------------|--------------------------------------|--------------|--------------------------------------------------------------------------------| -- | -- |
-| 1    | 04.02.2025 | Introduction, Environment, and Containerization | Setup | Course structure, generative vs. discriminative modeling, containerization, QUEST | -- | -- |
+| 1    | 04.02.2025 | [Introduction, Environment, and Containerization](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L01/#/) | Setup | Course structure, generative vs. discriminative modeling, containerization, QUEST | -- | -- |
 | 2    | 04.09.2025 | Machine Learning Operations | Setup | Distributed data preprocessing, containerized training, hyperparameter tuning and distributed training strategies | -- | Image Proposal |
 | 3    | 04.16.2025 | Autoencoders | Image | Autoencoders, variational autoencoders, latent space analysis | VAE, $\beta$-VAE, Conditional VAE | -- |
 | 4    | 04.23.2025 | Generative Adversarial Networks | Image | Deep convolutional GANs, discriminators & generators | WGAN-GP, Pro-GAN, StyleGAN | -- |
