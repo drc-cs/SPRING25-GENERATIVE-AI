@@ -217,16 +217,30 @@ If you are feeling distressed or overwhelmed, please reach out for help. Student
 
 We are here to help you! Please try contacting us first through office hours or the dedicated Canvas discussion threads. We will **not** debug projects via email, but are happy to meet during regularly scheduled times.
 
-### **Office Hours**
+<div class = "col-wrapper">
+<div class="c1" style = "width: 50%">
 
-Time: TBD
-Location: TBD
+### **GA Office Hours**
+
+Time: 2-3P on Thursdays<br>
+Location: Mudd 3108
+
+### **Instructor Office Hours**
+
+Time: By Appointment<br>
+Location: Mudd 3510
+
+</div>
+<div class="c2" style = "width: 50%">
 
 ### **Email**
 
 Xinran Li (GA): xinranli2025@u.northwestern.edu<br>
 Joshua D'Arcy (Instructor): joshua.darcy@northwestern.edu
 
+
+</div>
+</div>
 
 <!--s-->
 
