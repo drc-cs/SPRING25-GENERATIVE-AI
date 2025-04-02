@@ -26,15 +26,15 @@ revealOptions:
 
 <div class = "col-wrapper">
   <div class="c1 col-centered">
-  <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
+  <div style="font-size: 0.8em; left: 0; width: 50%; position: absolute;">
 
-  # Welcome to Generative AI.
+  # Welcome.
   ## Please check in after creating and logging into your account.
 
   </div>
   </div>
-  <div class="c2 col-centered" style = "bottom: 0; right: 0; width: 40%; padding-top: 5%">
-    <iframe src = "https://drc-cs-9a3f6.web.app?label=Check In" width = "100%" height = "100%"></iframe>
+  <div class="c2 col-centered" style = "bottom: 0; right: 0; width: 50%; padding-top: 5%">
+    <iframe src = "https://drc-cs-9a3f6.firebaseapp.com/?label=Check In" width = "100%" height = "100%"></iframe>
   </div>
 </div>
 
@@ -101,9 +101,9 @@ There is a high emphasis on the practical application of the concepts covered in
 
 | Component | Weight |
 | --- | --- |
-| Attendance & Comprehension | 40% |
-| Project Part I (Exhibit) | 20% |
-| Project Part II (Chatbot) | 20% |
+| Attendance & Comprehension | 20% |
+| Project Part I (Exhibit) | 30% |
+| Project Part II (Chatbot) | 30% |
 | Exam | 20% |
 
 </div>
@@ -137,6 +137,57 @@ There is one comprehensive final exam in this class. If you follow along with th
 
 <!--s-->
 
+## Projects
+
+The course will have two projects, each focusing on a different aspect of generative AI. The first project will focus on **image generation**, while the second project will focus on **text generation**. Both projects will have a proposal and a final report.
+
+We will vote on the best projects at the end of the quarter, and the top-voted projects will be presented on our last day of class. These top-voted projects get a large curve on their project grade.
+
+<!--s-->
+
+## Project Grading
+
+Gen AI is rapidly evolving, and companies that implement a little extra effort are being rewarded. In that spirit, we will have **baseline project criteria** (85%) and **extra project criteria** (15%).
+
+Baseline project criteria includes clean and reproducible code, as well as general ambition and quality. Perfect code and meeting the baseline criteria (a simple generative model that produces images, for example) will earn you an 85% on the project.
+
+To get the extra 15%, additional project criteria is outlined on the next slide.
+
+<!--s-->
+
+## Project Grading | Extra Project Criteria
+
+In your project proposal, please outline any additional features or improvements you plan to implement that go beyond the baseline project criteria. This could include:
+
+<div class = "col-wrapper">
+<div class="c1" style = "width: 50%">
+
+### Image Generation (Project 1)
+
+1. ML operations
+    - Distributed preprocessing or training pipelines
+    - Metrics training & evaluation tracking
+2. Hyperparameter tuning strategies
+3. Creative latent space exploration
+4. Gallery GUI
+
+</div>
+<div class="c2" style = "width: 50%">
+
+### Text Generation (Project 2)
+
+1. Multimodal model
+    - Text + Image
+    - Text + Audio
+    - Text + ??
+2. Explainable AI
+3. ML operations (must be different from the first project)
+4. Chatbot GUI
+</div>
+</div>
+
+<!--s-->
+
 ## Academic Integrity [&#x1F517;](https://www.northwestern.edu/provost/policies-procedures/academic-integrity/index.html)
 
 ### Homeworks
@@ -146,6 +197,7 @@ There is one comprehensive final exam in this class. If you follow along with th
 - You cannot upload / sell your assignments to code sharing websites.
 
 <!--s-->
+
 
 ## Accommodations
 
@@ -167,8 +219,8 @@ We are here to help you! Please try contacting us first through office hours or 
 
 ### **Office Hours**
 
-Time: Wednesdays 1:00 - 2:00PM<br>
-Location: Mudd 3510
+Time: TBD
+Location: TBD
 
 ### **Email**
 
@@ -180,15 +232,15 @@ Joshua D'Arcy (Instructor): joshua.darcy@northwestern.edu
 
 <div class = "col-wrapper">
   <div class="c1 col-centered">
-  <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
+  <div style="font-size: 0.8em; left: 0; width: 50%; position: absolute;">
 
   # Spring Quarter Plan
   ## After looking at the syllabus, is there anything you want me to cover that I'm not?
 
   </div>
   </div>
-  <div class="c2 col-centered" style = "bottom: 0; right: 0; width: 40%; padding-top: 5%">
-    <iframe src = "https://drc-cs-9a3f6.web.app?label=Coverage" width = "100%" height = "100%"></iframe>
+  <div class="c2 col-centered" style = "bottom: 0; right: 0; width: 50%; padding-top: 5%">
+    <iframe src = "https://drc-cs-9a3f6.firebaseapp.com/?label=Coverage" width = "100%" height = "100%"></iframe>
   </div>
 </div>
 
@@ -204,13 +256,31 @@ Joshua D'Arcy (Instructor): joshua.darcy@northwestern.edu
 
 ## Core Concepts | Generative vs Discriminative Models
 
+### Discriminative Models
+
+Estimate the conditional probability distribution $p(y|x)$.
+
 ### Generative Models
 
 Estimate distribution $p(x)$.
 
-### Discriminative Models
+<!--s-->
 
-Estimate the conditional probability distribution $p(y|x)$.
+## L.01 | Q.01
+
+Which of the following best describes a generative model?
+
+<div class="col-wrapper" >
+  <div class="c1 col-centered" style="width: 50%; ">
+    
+  A. A model that predicts the label of an input given its features.<br><br>
+  B. A model that generates new data points from the learned distribution.<br>
+
+  </div>
+  <div class="c2 col-centered" style="width: 50%;">
+    <iframe src="https://drc-cs-9a3f6.firebaseapp.com/?label=L.01 | Q.01" width="100%" height="100%"></iframe>
+  </div>
+</div>
 
 <!--s-->
 
@@ -289,13 +359,13 @@ Here, we can see that the distribution $p_{model}$ is not the same as the true d
  
 Representation learning is the process of learning a representation of the data that makes it easier to extract useful information when building models.
 
-Latent space $z$ is a lower-dimensional representation of the data $x$. The goal is to learn a mapping from $x$ to $z$ that captures the underlying structure of the data with:
+The latent space $z$ is a lower-dimensional representation of the data $x$. The goal is to learn a mapping from $x$ to $z$ that captures the underlying structure of the data with:
 
 $$f(x) = z$$
 
 <!--s-->
 
-## Core Concepts | Tin Latent Space
+## L.01 | Q.02
 
 For example, here is a small dataset of tins. How many latent features do you need to describe a tin?
 
@@ -308,8 +378,8 @@ For example, here is a small dataset of tins. How many latent features do you ne
 </div>
 
 </div>
-<div class="c2 col-centered" style = "bottom: 0; right: 0; width: 40%; padding-top: 5%">
-  <iframe src = "https://drc-cs-9a3f6.web.app?label=L.01 | Q.01" width = "100%" height = "100%"></iframe>
+<div class="c2" style = "bottom: 0; right: 0; width: 50%; padding-top: 0%;">
+  <iframe src = "https://drc-cs-9a3f6.firebaseapp.com/?label=L.01 | Q.02" width = "100%" height = "100%"></iframe>
 </div>
 </div>
 
@@ -384,17 +454,25 @@ A technique that we can use to structure our approach to finishing $p_{model}$. 
 
 ## Probability Theory | Likelihood
 
-The likelihood of a set of parameters $L(\theta | X)$ is the probability of observing the data $X$ given the parameters $\theta$. It is defined as $L(\theta | X) = p_{\theta}(X)$.
+The likelihood of a set of parameters $L(\theta | X)$ is a function that measures the plausibility of $\theta$ given the data $X$. It is defined as the probability of the data given the parameters:
 
-That is, the likelihood of $\theta$ given a point $x$ is $p_{\theta}(x)$. Given i.i.d., if we have a whole dataset $X = \{x_1, x_2, ..., x_n\}$, then the likelihood of $\theta$ given the dataset is $p_{\theta}(X) = \prod_{i=1}^{n} p_{\theta}(x_i)$.
+$$L(\theta | X) = p_{\theta}(X)$$
 
-The goal of training a generative model is to find the parameters $\theta$ that maximize the likelihood of the data. The log-likelihood is often used instead of the likelihood because it is easier to work with. The log-likelihood is defined as $\log p_{\theta}(X) = \sum_{i=1}^{n} \log p_{\theta}(x_i)$.
+That is, the likelihood of $\theta$ given a point $x$ is $p_{\theta}(x)$. Given i.i.d., if we have a whole dataset $X = \{x_1, x_2, ..., x_n\}$, then the likelihood of $\theta$ given the dataset is:
+
+$$p_{\theta}(X) = \prod_{i=1}^{n} p_{\theta}(x_i)$$
+
+The goal of training a generative model is to find the parameters $\theta$ that maximize the likelihood of the data. The log-likelihood is often used instead of the likelihood because it is easier to work with. The log-likelihood is defined as: 
+
+$$\log p_{\theta}(X) = \sum_{i=1}^{n} \log p_{\theta}(x_i)$$
 
 <!--s-->
 
 ## Probability Theory | Subtle Note on Likelihood
 
-The likelihood is a function of the parameters and not the data. It should not be intrepreted as the probability that a given parameter set is **correct**, but rather that the data is **likely** given the parameter set.
+The likelihood function, denoted as $L(\theta | X)$, where $\theta$ represents the parameters of a statistical model and $X$ represents the observed data, is defined as the probability of observing the data $X$ given a specific set of parameters $\theta$.
+
+The key here is that we treat the observed data $X$ as fixed, and we vary the parameters $\theta$. Therefore, the likelihood is a function of $\theta$.
 
 <!--s-->
 
@@ -437,7 +515,7 @@ Generative AI is a rapidly evolving field, and often you're most limited by your
 <div class="header-slide"> 
 
 # Docker
-*All of your requirements in one reproducible place.*
+*All of your requirements in one reproducible & portable place.*
 
 </div>
 
@@ -725,7 +803,7 @@ Docker uses Linux namespaces to provide isolation for containers and control gro
 ### Union File System
 Layers are used to create Docker images. Each layer is a modification over the previous one, which allows efficient storage and reduced bandwidth usage when distributing an image. A Union File System (UFS) combines these layers into a single view (union) of the file system.
 
-<div class = "col-wrapper">
+<div class = "col-wrapper" style="font-size: 0.8em;">
 <div class="c1" style = "width: 50%">
 
 > <span style="font-style: normal;"> **Namespaces**: Isolate containers from each other and the host system. </span>
@@ -831,6 +909,8 @@ Here are some common Docker CLI commands.
 
 Let's take a look at a simple Dockerfile for a TensorFlow container. This container is based on the official TensorFlow image and includes some common libraries for deep learning.
 
+In addition, it installs the code-server, which allows you to run a Visual Studio Code server inside the container. This makes it easier to edit and run your code directly in the container.
+
 ```dockerfile
 
 # Use the official TensorFlow image as a base image.
@@ -870,6 +950,7 @@ CMD ["code-server", "--auth", "none", "--bind-addr", "0.0.0.0:8080", "."]
 <div class="header-slide">
 
 # QUEST
+*Parking your scripts on scalable infrastructure.*
 
 </div>
 
@@ -879,7 +960,7 @@ CMD ["code-server", "--auth", "none", "--bind-addr", "0.0.0.0:8080", "."]
 
 <div class = "col-wrapper">
 
-<div class="c1" style = "width: 70%">
+<div class="c1" style = "width: 50%">
 
 1. What is QUEST?
 2. Why Use QUEST?
@@ -888,9 +969,10 @@ CMD ["code-server", "--auth", "none", "--bind-addr", "0.0.0.0:8080", "."]
 
 </div>
 
-<div class="c2" style = "width: 30%">
+<div class="c2" style = "width: 50%">
 
-<img src="https://storage.googleapis.com/slide_assets/quest.png" width="100%">
+<img src="https://storage.googleapis.com/slide_assets/quest.png" width="100%" style = "border-radius: 10px;">
+<p style="text-align: center; font-size: 0.6em; color: grey;">Northwestern Quest</p>
 
 </div>
 
@@ -924,14 +1006,14 @@ QUEST is best accessed via SSH. SSH (Secure Shell) is a network protocol that al
 To access QUEST, you will need to use your NetID and password. You can access QUEST from any computer with an internet connection.
 
 ```bash
-ssh -X <netid>@login2.quest.northwestern.edu
+ssh -X <netid>@login.quest.northwestern.edu
 ```
 
 <!--s-->
 
 ## Running Jobs on QUEST
 
-To run a job on QUEST, you will need to:
+To run a job on QUEST from your head node, you will need to:
 
 1. Write a <span class="code-span">slurm script</span> that specifies the job requirements.
 2. Submit the job using the <span class="code-span">sbatch</span> command.
@@ -1003,6 +1085,8 @@ sbatch jobscript.sh
 
 This command submits the job to the slurm scheduler, which allocates the necessary resources and runs the job. You can monitor the job using the <span class="code-span">squeue</span> command.
 
+Alternatively, you can keep an eye on your output file. The output file is specified in the slurm script with the <span class="code-span">--output</span> flag. In this case, the output file is <span class="code-span">/projects/p32562/gpu-check.log</span>.
+
 <!--s-->
 
 ## QUEST | Monitoring a Job
@@ -1045,6 +1129,17 @@ This command displays information about the jobs you have submitted, including t
   </div>
 
 </div>
+
+<!--s-->
+
+<div class="header-slide">
+
+# Image Generation Project Proposal
+## Due 04.09.2025 @ 11:59 PM
+
+</div>
+
+<!--s-->
 
 
 

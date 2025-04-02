@@ -7,7 +7,7 @@ Welcome to Generative AI! This course is designed to provide a comprehensive ove
 
 | Week | Date       | Topic   | Module       | Topics Covered  | Modern Architectures | Project Milestone |
 |------|------------|--------------------------------------|--------------|--------------------------------------------------------------------------------| -- | -- |
-| 1    | 04.02.2025 | Introduction, Environment, and Containerization | Setup | Course structure, generative vs. discriminative modeling, containerization, QUEST | -- | -- |
+| 1    | 04.02.2025 | [Introduction, Environment, and Containerization](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L01/#/) | Setup | Course structure, generative vs. discriminative modeling, containerization, QUEST | -- | -- |
 | 2    | 04.09.2025 | Machine Learning Operations | Setup | Distributed data preprocessing, containerized training, hyperparameter tuning and distributed training strategies | -- | Image Proposal |
 | 3    | 04.16.2025 | Autoencoders | Image | Autoencoders, variational autoencoders, latent space analysis | VAE, $\beta$-VAE, Conditional VAE | -- |
 | 4    | 04.23.2025 | Generative Adversarial Networks | Image | Deep convolutional GANs, discriminators & generators | WGAN-GP, Pro-GAN, StyleGAN | -- |
@@ -65,7 +65,7 @@ Meeting the basic project criteria will result in a maximum grade of 85% for the
 
 ### Extra Project Criteria
 
-Meeting the additional extra project criteria will result in a maximum grade of 100% for the project. Details on the extra project criteria will be provided in the project description, but the following are some high-level ideas:
+Meeting the additional extra project criteria will result in a maximum grade of 100% for the project. The following are some high-level ideas for "Extra Project Criteria":
 
 #### Image Generation
 
@@ -74,7 +74,7 @@ Meeting the additional extra project criteria will result in a maximum grade of 
 - Metrics training & evaluation tracking
 2. Hyperparameter tuning strategies
 3. Creative latent space exploration
-4. Image GUI
+4. Gallery GUI
 
 #### Text Generation
 
