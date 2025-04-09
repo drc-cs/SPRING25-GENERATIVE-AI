@@ -1045,7 +1045,7 @@ if __name__ == "__main__":
 Choose an appropriate batch size to balance between computation and communication. For example, a larger batch size can reduce the number of communication rounds.
 
 ### Synchronization
-Use efficient synchronization techniques to minimize communication overhead. For example, use asynchronous updates or gradient compression.
+Use efficient synchronization techniques to minimize communication overhead. For example, using gradient compression.
 
 </div>
 <div class="c2" style = "width: 50%">
@@ -1402,7 +1402,7 @@ for batch_idx, (data, target) in enumerate(train_loader):
 
 ## Summary
 
-<div class="col-wrapper" style = "font-size: 0.8em">
+<div class="col-wrapper" style = "font-size: 0.75em">
 <div class="c1" style="width: 50%; margin-right: 2em;">
 
 ### Data Preprocessing
