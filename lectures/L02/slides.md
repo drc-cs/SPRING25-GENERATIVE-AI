@@ -1493,3 +1493,21 @@ In your project proposal, please outline any additional features or improvements
 4. Gallery GUI
 
 <!--s-->
+
+## Project Proposal
+
+1. Title -- A short, clean title to identify your project.
+2. Images source -- Where are you getting your original images? What are you trying to generate?
+3. Model architecture(s) -- What model architecture do you plan to use? Please choose from AE/VAE, GAN, or diffusion architectures.
+4. Extra Criteria -- What "Extra Criteria" are you pursuing? 
+
+<!--s-->
+
+## Project Proposal Example
+
+1. Title -- Flower Generator
+2. Images source -- I'll be using the Oxford 102 Flower Dataset. https://paperswithcode.com/dataset/oxford-102-flower
+3. Model architecture(s) -- Training a diffusion model to generate flowers.
+4. Extra Criteria -- Hyperband optimization of parameters & data-parallelism for efficient training.
+
+<!--s-->
