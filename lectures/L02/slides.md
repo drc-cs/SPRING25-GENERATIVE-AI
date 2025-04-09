@@ -1506,7 +1506,7 @@ In your project proposal, please outline any additional features or improvements
 ## Project Proposal Example
 
 1. Title -- Flower Generator
-2. Images source -- I'll be using the Oxford 102 Flower Dataset. https://paperswithcode.com/dataset/oxford-102-flower
+2. Images source -- I'll be using the [Oxford 102 Flower Dataset](https://paperswithcode.com/dataset/oxford-102-flower).
 3. Model architecture(s) -- Training a diffusion model to generate flowers.
 4. Extra Criteria -- Hyperband optimization of parameters & data-parallelism for efficient training.
 
