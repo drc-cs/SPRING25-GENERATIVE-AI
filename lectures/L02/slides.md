@@ -110,11 +110,11 @@ revealOptions:
 
 Separating data preprocessing from model training is a crucial practice in machine learning workflows.
 
-- Different Resource Requirements
-- Scalability
-- Modularity and Reusability
-- Improved Debugging and Maintenance
-- Consistency and Reproducibility
+- ### Different Resource Requirements
+- ### Scalability
+- ### Modularity and Reusability
+- ### Improved Debugging and Maintenance
+- ### Consistency and Reproducibility
 
 <!--s-->
 
@@ -147,7 +147,7 @@ This separation allows each process to be scaled according to its specific needs
 
   <div class="c2" style="width: 50%">
     <h3>Model Training</h3>
-    <p>Can be scaled using specialized hardware like GPUs with NVLink for faster data transfer.</p>
+    <p>Can be scaled using specialized hardware like multiple GPUs with NVLink for faster data transfer.</p>
   </div>
 </div>
 
@@ -215,7 +215,7 @@ This workflow ensures that each stage is optimized and managed independently, le
 
 ## L.02 | Q.01
 
-Which of the following is not a benefit of separating data preprocessing from model training?
+Which of the following is **not** a benefit of separating data preprocessing from model training?
 
 <div class = 'col-wrapper'>
 <div class='c1' style = 'width: 50%; margin-left: 5%; margin-top: 10%;'>
@@ -392,7 +392,7 @@ D. 10<br><br>
 
 ## Columnar Databases
 
-**Columnar Databases** (as opposed to traditional OLTP systems) store data tables primarily by column rather than row. This storage approach is ideal for OLAP scenarios as it dramatically speeds up the querying of large datasets.
+**Columnar Databases** (as opposed to traditional OLTP systems) store data tables primarily by column rather than row. This storage approach is ideal for OLAP scenarios as it dramatically speeds up the data manipulation and retrieval process.
 
 <div class="col-wrapper col-centered">
 <img src = "https://storage.googleapis.com/gweb-cloudblog-publish/images/BigQuery_Explained_storage_options_2.max-700x700.png" style="border-radius: 10px"/>
@@ -443,7 +443,7 @@ Column-based databases provide faster data retrieval and more effective data com
 
 1. **Data Compression**: Columnar databases may employ techniques such as Run Length Encoding (where repetitions of a value are condensed into a single entry with a count) and Dictionary Encoding (which uses a dictionary of unique values and indices) to conserve storage space and boost query efficiency.
 
-2. **Vectorized Execution**: This programming approach leverages CPU vector registers to process entire arrays of data with a single instruction, improving performance by utilizing parallel data processing. The use of vectorized execution efficiently harnesses SIMD capabilities in software.
+2. **Vectorized Execution**: Vectorized execution refers to the ability to process data in batches or vectors rather than one row at a time. This approach takes advantage of modern CPU architectures and SIMD capabilities, leading to significant performance improvements.
 
 3. **SIMD (Single Instruction, Multiple Data)**: SIMD refers to the hardware architecture that allows for the simultaneous execution of a single operation on multiple data points. This capability is essential for parallel processing in columnar storage, enabling high performance and efficiency.
 
@@ -451,17 +451,35 @@ Column-based databases provide faster data retrieval and more effective data com
 
 ## Cloud-based Columnar Data Warehouse Services
 
+<div class = "col-wrapper" style="font-size: 0.8em">
+<div class="c1" style = "width: 50%">
+
 ### AWS Redshift
 
-Uses columnar storage, massively parallel processing, and optimized compression to enhance performance.
+- Uses columnar storage, which significantly enhances query performance for analytical workloads.
+- Employs massively parallel processing (MPP) to distribute and accelerate query execution across multiple nodes.
+- Leverages optimized data compression techniques to reduce storage footprint and improve I/O efficiency.
 
 ### GCP BigQuery
 
-Serverless, highly scalable, and cost-effective multi-cloud data warehouse designed for business agility.
+- Serverless architecture eliminates infrastructure management overhead, allowing users to focus on data analysis.
+- Highly scalable, capable of handling petabyte-scale datasets and dynamically adjusting resources.
+- Cost-effective, with a pay-as-you-go pricing model based on query processing and storage usage.
+- Strong integration with other GCP services.
 
-### SnowFlake
+</div>
+<div class="c2" style = "width: 50%">
 
-Provides a unique architecture with a separation of compute and storage layers, allowing for scalable and elastic performance.
+### Snowflake
+
+- Unique architecture with separate compute and storage layers, enabling independent scaling and optimization.
+- Provides elastic performance, allowing for dynamic resource allocation to handle varying workloads.
+- Offers data sharing capabilities.
+
+</div>
+</div>
+
+
 
 <!--s-->
 
@@ -487,44 +505,42 @@ df = client.query(query).to_dataframe()
 ### Standardizing a Column using a Stored Procedure with Snowflake
 
 ```text
-
 CREATE OR REPLACE PROCEDURE standardize_salary()
-RETURNS STRING
 LANGUAGE PYTHON
 RUNTIME_VERSION = 3.8
 HANDLER = 'main'
 AS
 $$
 import snowflake.connector
-import pandas as pd
 
 def main(session):
-    # Calculate mean and standard deviation
-    sql_query = "SELECT AVG(salary) AS mean_salary, STDDEV(salary) AS stddev_salary FROM employees"
-    result = session.sql(sql_query).collect()
-    mean_salary = result[0]['MEAN_SALARY']
-    stddev_salary = result[0]['STDDEV_SALARY']
+    try:
+        # Calculate mean and standard deviation
+        result = session.sql("SELECT AVG(salary), STDDEV(salary) FROM employees").collect()
+        mean_salary, stddev_salary = result[0]
 
-    if stddev_salary == 0:
-        return "Standard deviation is zero. Salaries are identical. No standardization performed."
+        if stddev_salary == 0:
+            return "Standard deviation is zero. Salaries are identical. No standardization performed."
 
-    # Fetch all salaries and employee IDs
-    salary_df = session.table("employees").select("employee_id", "salary").to_pandas()
+        # Add the standardized_salary column if it doesn't exist
+        session.sql("ALTER TABLE employees ADD COLUMN IF NOT EXISTS standardized_salary FLOAT").collect()
 
-    # Standardize salaries
-    salary_df['standardized_salary'] = (salary_df['SALARY'] - mean_salary) / stddev_salary
+        # Update standardized_salary column
+        update_query = f"""
+        UPDATE employees 
+        SET standardized_salary = (salary - {mean_salary}) / {stddev_salary}
+        """
+        session.sql(update_query).collect()
 
-    # Update the employee table with standardized values using employee ID
-    for _, row in salary_df.iterrows():
-        update_sql = "UPDATE employees SET salary = %(standardized_salary)s WHERE employee_id = %(employee_id)s"
-        session.execute(update_sql, {
-            'standardized_salary': row['standardized_salary'],
-            'employee_id': row['EMPLOYEE_ID']
-        })
+        return "Salary standardization completed. New standardized_salary column added."
 
-    return "Salary standardization completed."
-
+    except Exception as e:
+        return f"Error: {str(e)}"
 $$;
+```
+
+```sql
+CALL standardize_salary();
 ```
 
 
@@ -552,28 +568,28 @@ $$;
 These images come with popular frameworks like TensorFlow, PyTorch, and Jax/Flax with CUDA support.
 
 <div class = "col-wrapper">
-<div class="c1" style = "width: 50%">
+<div class="c1" style = "width: 50%; margin-right: 2em;">
 
 ### AWS
 
-AWS provides pre-built Docker images optimized for deep learning workloads.
+AWS provides [Docker images](https://github.com/aws/deep-learning-containers/blob/master/available_images.md) optimized for deep learning workloads on AWS.
 
 ```bash
-# Pulling a TensorFlow container from AWS
-docker pull 763104351884.dkr.ecr.us-west-2.amazonaws.com/tensorflow-training:2.4.1-gpu-py37-cu110-ubuntu18.04
+# Pulling a TensorFlow container from AWS.
+docker pull 763104351884.dkr.ecr.us-east-1.amazonaws.com/tensorflow-training:2.18.0-cpu-py310-ubuntu22.04-ec2
 ```
 
 ### GCP
 
-Google Cloud offers pre-configured Docker images for deep learning, integrated with Google Cloud services.
+Google Cloud offers [Docker images](https://cloud.google.com/deep-learning-containers/docs/getting-started-local) for deep learning, integrated with Google Cloud services.
 
 ```bash
 # Pulling a PyTorch container from Google Cloud
-docker pull gcr.io/deeplearning-platform-release/pytorch-gpu:latest
+docker pull us-docker.pkg.dev/deeplearning-platform-release/gcr.io/tf2-cpu.2-17.py310
 ```
 
 </div>
-<div class="c2" style = "width: 50%">
+<div class="c2" style = "width: 50%; margin-right: 2em;">
 
 ### DockerHub
 
@@ -658,9 +674,7 @@ docker run -t my_tensorflow_image
 
 ## Running on SLURM
 
-SLURM (Simple Linux Utility for Resource Management) is a popular job scheduler used in high-performance computing (HPC) environments. 
-
-SLURM allows you to submit and manage jobs on a cluster of compute nodes. Northwestern has been kind enough to provide us with access to a SLURM cluster.
+SLURM (Simple Linux Utility for Resource Management) is a popular job scheduler used in high-performance computing (HPC) environments. As a reminder, SLURM allows you to submit and manage jobs on a cluster of compute nodes. We have access to the Northwestern Quest cluster, which uses SLURM.
 
 <!--s-->
 
@@ -1066,7 +1080,7 @@ Model parallelism is a technique used to distribute the training of a machine le
 
 ## Types of Model Parallelism
 
-There are **many** methods to achieve model parallelism.
+There are several methods to achieve model parallelism.
 
 <div class = "col-wrapper" style = "font-size: 0.8em;">
 <div class="c1" style = "width: 50%; margin-right: 2em;">
@@ -1219,7 +1233,6 @@ Optimize communication between devices to minimize overhead -- this is done thro
 
 Profile the training process to identify and address bottlenecks -- this can be done using tools like TensorBoard or PyTorch Profiler.
 
-
 </div>
 </div>
 
@@ -1288,6 +1301,30 @@ model.fit(x_train, y_train, epochs=5, batch_size=64, validation_data=(x_test, y_
 
 <!--s-->
 
+## L.02 | Q.04
+
+The Tensorflow Profiler is a tool that helps you analyze the performance of your TensorFlow models. It provides insights into the execution time of different operations, memory usage, and other performance metrics.
+
+What's the bottleneck here?
+
+<div class = "col-wrapper">
+<div class="c1 col-centered" style = "width: 60%; justify-content: start;">
+
+<div style='text-align: center;'>
+   <img src='https://storage.googleapis.com/slide_assets/profile.png' style='border-radius: 10px;'>
+   <p style='font-size: 0.6em; color: grey;'>TensorFlow 2025</p>
+</div>
+
+</div>
+<div class="c2" style = "width: 40%; justify-content: start; padding-bottom: 20%;">
+
+<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.02 | Q.04' width = '100%' height = '100%'></iframe>
+
+</div>
+</div>
+
+<!--s-->
+
 ## TensorBoard | Features
 
 | Feature | Description | Why is it useful? |
@@ -1307,7 +1344,7 @@ model.fit(x_train, y_train, epochs=5, batch_size=64, validation_data=(x_test, y_
 Weights & Biases (W&B) is a popular tool for experiment tracking, model management, and collaboration in machine learning projects. It provides a suite of tools to help you visualize, compare, and share your machine learning experiments.
 
 <div style="text-align: center;">
-  <img src="https://help.ovhcloud.com/public_cloud-ai_machine_learning-notebook_tuto_03_weight_biases-images-overview_wandb.png" width="50%" style="border-radius: 10px;">
+  <img src="https://help.ovhcloud.com/public_cloud-ai_machine_learning-notebook_tuto_03_weight_biases-images-overview_wandb.png" width="800%" style="border-radius: 10px;">
   <p style="font-size: 0.6em; color: grey;">Weights & Biases (2023)</p>
 </div>
 
@@ -1319,59 +1356,28 @@ Weights & Biases works through a simple REST API that integrates with popular ma
 
 <div class = "col-wrapper">
 
-<div class="c1" style = "width: 50%">
+<div class="c1 col-centered" style = "width: 50%; justify-content: start;">
 
 ```python
-
-import torch
-import torch.nn as nn
-import torch.optim as optim
 import wandb
 
-# Initialize Weights & Biases
-wandb.init(project="my-pytorch-project")
+wandb.init(config=args)
 
-# Define a simple model
-class SimpleModel(nn.Module):
-  def __init__(self):
-    super(SimpleModel, self).__init__()
-    self.fc1 = nn.Linear(28 * 28, 128)
-    self.fc2 = nn.Linear(128, 10)
+model = ...  # set up your model
 
-  def forward(self, x):
-    x = torch.flatten(x, 1)
-    x = torch.relu(self.fc1(x))
-    x = self.fc2(x)
-    return x
-
-# Create model, loss function, and optimizer
-model = SimpleModel()
-criterion = nn.CrossEntropyLoss()
-optimizer = optim.Adam(model.parameters(), lr=0.001)
-
-# Dummy data
-x_train = torch.randn(64, 1, 28, 28)
-y_train = torch.randint(0, 10, (64,))
-
-# Training loop
-for epoch in range(10):
-  model.train()
-  optimizer.zero_grad()
-  outputs = model(x_train)
-  loss = criterion(outputs, y_train)
-  loss.backward()
-  optimizer.step()
-
-  # Log metrics to Weights & Biases
-  wandb.log({"epoch": epoch, "loss": loss.item()})
-
-# Finish the run
-wandb.finish()
-
+model.train()
+for batch_idx, (data, target) in enumerate(train_loader):
+    output = model(data)
+    loss = F.nll_loss(output, target)
+    loss.backward()
+    optimizer.step()
+    if batch_idx % args.log_interval == 0:
+        wandb.log({"loss": loss})
 ```
+<p style="font-size: 0.6em; color: grey;">Weights & Biases (2025)</p>
 
 </div>
-<div class="c2 col-centered" style = "width: 50%">
+<div class="c2 col-centered" style = "width: 50%; justify-content: start;">
 
 <div style="text-align: center;">
   <img src="https://help.ovhcloud.com/public_cloud-ai_machine_learning-notebook_tuto_03_weight_biases-images-overview_wandb.png" width="100%" style="border-radius: 10px;">
