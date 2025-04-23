@@ -152,7 +152,7 @@ train_data = train_data.map(lambda x: (x - 127.5) / 127.5)
 
 The reason we normalize the pixel values to be between -1 and 1 is because we will be using a **tanh** activation function in the generator. The tanh function outputs values between -1 and 1, so we need to normalize the pixel values to be in the same range. 
 
-tanh tends to provide stronger gradients than sigmoid, especially for values close to 0.
+tanh tends to provide stronger gradients than sigmoid. 
 
 <!--s-->
 
@@ -398,7 +398,7 @@ This is a difficult task, because the discriminator will always have an advantag
 
 ## GAN Epoch Performance
 
-It's important to ensure that we are not simply overfitting the training data. A good generator should be able to generate images that are not in the training set. One way to assure this is to compare the generated images to their nearest neighbors in the training set.
+It's important to ensure that we are not simply overfitting the training data. A good generator should be able to generate images that are not in the training set. One way to ensure this is to compare the generated images to their nearest neighbors in the training set.
 
 
 This can be easily done via L1 distance.
