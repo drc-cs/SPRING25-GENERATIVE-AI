@@ -11,7 +11,7 @@ Welcome to Generative AI! This course is designed to provide a comprehensive ove
 | 2    | 04.09.2025 | [Machine Learning Operations](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L02/#/) | Setup | Distributed data preprocessing, containerized training, hyperparameter tuning and distributed training strategies | -- | Image Proposal |
 | 3    | 04.16.2025 | [Autoencoders](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L03/#/) | Image | Autoencoders, variational autoencoders, latent space analysis | VAE, $\beta$-VAE | -- |
 | 4    | 04.23.2025 | [Generative Adversarial Networks](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L04/#/) | Image | Deep convolutional GANs, discriminators & generators | WGAN-GP, Conditional GANs | -- |
-| 5    | 04.30.2025 | Diffusion Models | Image | Denoising diffusion models, forward/reverse process, U-Net denoising model | DDIM, Imagen, Stable Diffusion | -- |
+| 5    | 04.30.2025 | [Diffusion Models](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L05/#/) | Image | Denoising diffusion models, forward/reverse process, U-Net denoising model | DDIM, Imagen, Stable Diffusion | -- |
 | 6    | 05.07.2025 | Autoregressive Text Models | Text | RNN/LSTM, transformers, distributed text processing, R.A.G. | GPT, BERT, T5 | Image Project |
 | 7    | 05.14.2025 | Forecast Models | Signal | Forecasting, Traditional (SARIMAX), Modern (XGBoost, TiDE) | SARIMAX, XGBoost, TiDE | Text Proposal |
 | 8    | 05.21.2025 | Conditional & Multimodal Model Strategies | Text + Image | Image + Text models approaches | CLIP, DALL-E, BLIP | -- |
