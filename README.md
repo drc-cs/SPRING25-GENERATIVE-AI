@@ -5,14 +5,14 @@ Welcome to Generative AI! This course is designed to provide a comprehensive ove
 
 ## Schedule
 
-| Week | Date       | Topic   | Module       | Topics Covered  | Modern Architectures | Project Milestone |
+| Week | Date       | Topic   | Module  | Topics Covered  | Modern Architectures | Project Milestone |
 |------|------------|--------------------------------------|--------------|--------------------------------------------------------------------------------| -- | -- |
-| 1    | 04.02.2025 | [Introduction, Environment, and Containerization](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L01/#/) | Setup | Course structure, generative vs. discriminative modeling, containerization, QUEST | -- | -- |
-| 2    | 04.09.2025 | [Machine Learning Operations](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L02/#/) | Setup | Distributed data preprocessing, containerized training, hyperparameter tuning and distributed training strategies | -- | Image Proposal |
-| 3    | 04.16.2025 | [Autoencoders](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L03/#/) | Image | Autoencoders, variational autoencoders, latent space analysis | VAE, $\beta$-VAE | -- |
-| 4    | 04.23.2025 | [Generative Adversarial Networks](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L04/#/) | Image | Deep convolutional GANs, discriminators & generators | WGAN-GP, Conditional GANs | -- |
-| 5    | 04.30.2025 | [Diffusion Models](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L05/#/) | Image | Denoising diffusion models, forward/reverse process, U-Net denoising model | DDIM, Imagen, Stable Diffusion | -- |
-| 6    | 05.07.2025 | Autoregressive Text Models | Text | RNN/LSTM, transformers, distributed text processing, R.A.G. | GPT, BERT, T5 | Image Project |
+| 1    | 04.02.2025 | [Introduction, Environment, and Containerization](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L01/#/) [[download_slides](https://storage.googleapis.com/slide_assets/GenAI_Lectures/L01.pdf)]| Setup | Course structure, generative vs. discriminative modeling, containerization, QUEST | -- | -- |
+| 2    | 04.09.2025 | [Machine Learning Operations](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L02/#/) [[download_slides](https://storage.googleapis.com/slide_assets/GenAI_Lectures/L02.pdf)] | Setup | Distributed data preprocessing, containerized training, hyperparameter tuning and distributed training strategies | -- | Image Proposal |
+| 3    | 04.16.2025 | [Autoencoders](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L03/#/) [[download_slides](https://storage.googleapis.com/slide_assets/GenAI_Lectures/L03.pdf)] | Image | Autoencoders, variational autoencoders, latent space analysis | VAE, $\beta$-VAE | -- |
+| 4    | 04.23.2025 | [Generative Adversarial Networks](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L04/#/) [[download_slides](https://storage.googleapis.com/slide_assets/GenAI_Lectures/L04.pdf)] | Image | Deep convolutional GANs, discriminators & generators | WGAN-GP, Conditional GANs | -- |
+| 5    | 04.30.2025 | [Diffusion Models](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L05/#/) [[download_slides](https://storage.googleapis.com/slide_assets/GenAI_Lectures/L05.pdf)] | Image | Denoising diffusion models, forward/reverse process, U-Net denoising model | DDIM, Imagen, Stable Diffusion | -- |
+| 6    | 05.07.2025 | [Autoregressive Text Models](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L06/#/) [[download_slides](https://storage.googleapis.com/slide_assets/GenAI_Lectures/L06.pdf)] | Text | RNN/LSTM, transformers, distributed text processing, R.A.G. | GPT, BERT, T5 | Image Project |
 | 7    | 05.14.2025 | Forecast Models | Signal | Forecasting, Traditional (SARIMAX), Modern (XGBoost, TiDE) | SARIMAX, XGBoost, TiDE | Text Proposal |
 | 8    | 05.21.2025 | Conditional & Multimodal Model Strategies | Text + Image | Image + Text models approaches | CLIP, DALL-E, BLIP | -- |
 | 9    | 05.28.2025 | Creative Applications & Societal Implications. Exam Review. | Text + Image | Generative AI in art, music, and literature, ethical considerations | GPT Storyteller, MusicGen | -- |
