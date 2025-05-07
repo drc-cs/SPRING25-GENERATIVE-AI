@@ -663,7 +663,7 @@ Encoder-only models encode the input text into a fixed-size vector. These models
 Autoregressive models generate text one token at a time by conditioning on the previous tokens. Used in text generation, language modeling, and summarization.
 
 </div>
-<div class="c2 col-centered" style = "width: 50%">
+<div class="c2 col-centered" style = "width: 40%">
 
 <div>
 <img src='https://storage.googleapis.com/slide_assets/transformer.png' style="margin: 0; padding: 0; ">
