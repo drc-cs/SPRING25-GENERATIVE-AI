@@ -358,6 +358,24 @@ In order to understand how transformers work, we need to understand the **attent
 
 <!--s-->
 
+## L.06 | Q.01
+
+
+<div class = 'col-wrapper'>
+<div class='c1' style = 'width: 50%; margin-left: 5%; margin-top: 10%;'>
+
+Desribe what <span class="code-span">k</span> is in the context of self-attention.
+
+</div>
+<div class='c2' style = 'width: 50%;'>
+
+<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.06 | Q.01' width = '100%' height = '100%'></iframe>
+
+</div>
+</div>
+
+<!--s-->
+
 ## Transformers | Self-Attention
 
 Self-attention is a mechanism that allows the model to weigh the importance of different words in a sequence when generating text. It computes attention scores for each word based on its relationship with other words in the sequence. It does this by computing three vectors for each word: the query (q), key (k), and value (v) vectors.
@@ -381,7 +399,6 @@ Self-attention is a mechanism that allows the model to weigh the importance of d
 
 </div>
 </div>
-
 
 <!--s-->
 
@@ -536,7 +553,6 @@ Learn a separate embedding for each position in the sequence.
 ### Sinusoidal Positional Encoding
 Use sine and cosine functions to generate positional embeddings.
 
-
 <!--s-->
 
 ## Transformers | Learned Positional Embeddings
@@ -623,6 +639,27 @@ Causal masking is important for decoder-only architectures, such as GPT-4.
 
 <!--s-->
 
+## L.06 | Q.02
+
+What type of normalization is used in transformers?
+
+<div class = 'col-wrapper'>
+<div class='c1' style = 'width: 50%; margin-left: 5%; margin-top: 10%;'>
+
+A. Batch Normalization<br>
+B. Layer Normalization<br>
+C. Instance Normalization<br>
+D. Group Normalization<br>
+
+</div>
+
+<div class='c2' style = 'width: 50%;'>
+<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.06 | Q.02' width = '100%' height = '100%'></iframe>
+</div>
+</div>
+
+<!--s-->
+
 ## Transformers | Normalization
 
 Layer normalization normalizes the inputs to each layer, ensuring that they have a mean of 0 and a standard deviation of 1. This helps to mitigate the effects of internal covariate shift and improves convergence.
@@ -634,6 +671,7 @@ Compared to batch normalization, layer normalization is applied to each individu
    <p style='font-size: 0.6em; color: grey;'>Foster 2024</p>
 </div>
 
+
 <!--s-->
 
 ## Transformer Architecture Recap
@@ -641,6 +679,25 @@ Compared to batch normalization, layer normalization is applied to each individu
 <div style='text-align: center;'>
    <img src='https://storage.googleapis.com/slide_assets/transformer.png' style='border-radius: 10px; width: 40%;'>
    <p style='font-size: 0.6em; color: grey;'>Vashwani 2017</p>
+</div>
+
+<!--s-->
+
+## L.06 | Q.03
+
+What type of transformer architecture is BERT?
+
+<div class = 'col-wrapper'>
+<div class='c1' style = 'width: 50%; margin-left: 5%; margin-top: 10%;'>
+
+A. Encoder-Only<br>
+B. Decoder-Only<br>
+C. Encoder-Decoder<br>
+
+</div>
+<div class='c2' style = 'width: 50%;'>
+<iframe src = 'https://drc-cs-9a3f6.firebaseapp.com/?label=L.06 | Q.03' width = '100%' height = '100%'></iframe>
+</div>
 </div>
 
 <!--s-->
