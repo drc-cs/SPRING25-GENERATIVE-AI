@@ -696,9 +696,11 @@ TiDE (Time-series Dense Encoder) is a deep learning model that utilizes a dense 
 
 # Forecasting Competition & Project Review
 
-## [[click_here_for_colab](https://colab.research.google.com/drive/1VDcldR1CTBkoYpc-JVydRm-8gtpfc9-T?usp=sharing)]
-
+## [[colab](https://colab.research.google.com/drive/1VDcldR1CTBkoYpc-JVydRm-8gtpfc9-T?usp=sharing)] [[scoreboard]](https://docs.google.com/spreadsheets/d/1ecPwzSf3xhUazsJjryzELCyxIB3ZBvxRNhmxCH-3T9A/edit?usp=sharing)
+ 
 </div>
+
+<!--s-->
 
 
 
