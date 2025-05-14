@@ -12,7 +12,7 @@ revealOptions:
   <div style="font-size: 0.8em; left: 0; width: 70%; position: absolute;">
 
   #  Generative AI
-  ## L.07 | Autoregressive Signal
+  ## L.07 | Forecasting
 
   </div>
   </div>
@@ -75,7 +75,7 @@ Project 2 is due on 06.04.2025 and is worth 100 points.
 
 <div class="header-slide">
 
-# Autoregressive Signal
+# Forecasting
 
 </div>
 
@@ -86,7 +86,7 @@ Project 2 is due on 06.04.2025 and is worth 100 points.
 <div class = "col-wrapper">
 <div class="c1" style = "width: 50%;">
 
-### Time Series Modeling
+### Forecasting
 
 - Covariates (Past / Future / Static)
 - Train & Forecast on Multiple Series
@@ -114,15 +114,15 @@ Project 2 is due on 06.04.2025 and is worth 100 points.
 
 <div class="header-slide">
 
-# Time Series Modeling
+# Forecasting
 
 </div>
 
 <!--s-->
 
-## Time Series Modeling
+## Forecasting
 
-Time series modeling is the process of analyzing time-ordered data to extract meaningful patterns and make predictions about future values. It involves understanding the underlying structure of the data, identifying trends, seasonality, and other patterns, and using this information to build models that can forecast future values. Today we're breaking down models into three categories:
+Forecasting is the process of analyzing time-ordered data to extract meaningful patterns and make predictions about future values. It involves understanding the underlying structure of the data, identifying trends, seasonality, and other patterns, and using this information to build models that can forecast future values. Today we're breaking down models into three categories:
 
 - **Classical Models**: These models are based on statistical techniques and assumptions about the data. Examples include ARIMA, SARIMA, and Exponential Smoothing.
 
@@ -132,7 +132,7 @@ Time series modeling is the process of analyzing time-ordered data to extract me
 
 <!--s-->
 
-## Time Series Modeling | Prediction Task
+## Forecasting | Prediction Task
 
 The prediction task in time series modeling involves forecasting future values. Values that can be used to predict future values can be categorized into three types:
 
@@ -158,7 +158,7 @@ The prediction task in time series modeling involves forecasting future values. 
 
 <!--s-->
 
-## Time Series Modeling | Past Covariates
+## Forecasting | Past Covariates
 
 These are the most intuitive and commonly used covariates in time series modeling. They are the historical values of the time series itself, which can be used to predict future values. Consider the following example, which only uses past covariates to predict future values:
 
@@ -169,7 +169,7 @@ These are the most intuitive and commonly used covariates in time series modelin
 
 <!--s-->
 
-## Time Series Modeling | Future Covariates
+## Forecasting | Future Covariates
 
 Future covariates are values that will be observed in the future. They can be used to improve the accuracy of predictions, especially when there are known future events that will impact the time series. For example, if we know that a holiday will occur in the future, we can use that information to improve our predictions.
 
@@ -180,7 +180,7 @@ Future covariates are values that will be observed in the future. They can be us
 
 <!--s-->
 
-## Time Series Modeling | Static Covariates
+## Forecasting | Static Covariates
 
 Static covariates are additional features that do not change over time. They can provide valuable context for the time series and improve the accuracy of predictions. For example, if we are predicting sales for a retail store, we might include static covariates such as the store's location or the type of products sold. They are most useful in **multivariate** settings.
 
@@ -191,7 +191,7 @@ Static covariates are additional features that do not change over time. They can
 
 <!--s-->
 
-## Time Series Modeling | Train & Forecast on Multiple Series
+## Forecasting | Train & Forecast on Multiple Series
 
 In many real-world applications, we have multiple time series that are related to each other. For example, we might have sales data for multiple products in a retail store. In these cases, we can train a model on multiple time series and use it to forecast future values for all of them. 
 
@@ -249,24 +249,13 @@ Quantile regression works by fitting a model to the data and estimating the quan
 
 The pinball loss function is a loss function used in quantile regression to estimate the conditional quantiles of a response variable. In the case below "$\alpha$" is the quantile level, which can be set to any value between 0 and 1.
 
-<div class = "col-wrapper">
-<div class="c1" style = "width: 50%">
+[[math, section 3](https://arxiv.org/pdf/2304.11732)]
 
 <div style='text-align: center;'>
    <img src='https://storage.googleapis.com/slide_assets/pinball_loss.png' style='border-radius: 10px;'>
-   <p style='font-size: 0.6em; color: grey;'></p>
+   <p style='font-size: 0.6em; color: grey; margin: 0;'>Koenker and Bassett Jr (1978)</p>
 </div>
 
-</div>
-<div class="c2" style = "width: 50%">
-
-<div style='text-align: center;'>
-   <img src='https://storage.googleapis.com/slide_assets/pinball_plots.png' style='border-radius: 10px;'>
-   <p style='font-size: 0.6em; color: grey;'>Lewinson 2024</p>
-</div>
-
-</div>
-</div>
 
 <!--s-->
 
@@ -331,17 +320,9 @@ pred.plot(label='forecast')
 
 <!--s-->
 
-## ARIMA Requirements
-
-ARIMA models require the time series data to be stationary, meaning that the statistical properties of the series (such as mean and variance) do not change over time. If the data is not stationary, it may need to be transformed through differencing or other techniques to achieve stationarity. 
-
-The parameter I (Integrated) in ARIMA refers to the number of times the data needs to be differenced to make it stationary.
-
-<!--s-->
-
 ## Forecasting Models | ARIMA to SARIMAX
 
-ARIMA (AutoRegressive Integrated Moving Average) is a class of models that captures a suite of different standard temporal structures in time series data. It is characterized by three main components:
+ARIMA (AutoRegressive Integrated Moving Average) is characterized by three main components:
 
 - AR (AutoRegressive): This component captures the relationship between an observation and a number of lagged observations (i.e., past values). $p$ is the number of lag observations included in the model (the order of the AR term)
 
@@ -589,22 +570,24 @@ Between 2019 and 2022, Transformer-based models became a popular choice for time
 
 <!--s-->
 
-## Are Transformers Effective for Time Series Forecasting? 
+## But ... Are Transformers Effective for Time Series Forecasting? 
 [[original_paper](https://arxiv.org/pdf/2205.13504)]
 
 In 2022, a paper titled "Are Transformers Effective for Time Series Forecasting?" was published, which provided a comprehensive analysis of the effectiveness of Transformer-based models for time series forecasting.
 
-<div class = "col-wrapper">
-<div class="c1" style = "width: 50%">
+<div class = "col-wrapper" style = "margin-top: 0; padding-top: 0;">
+<div class="c1" style = "width: 50%; margin-top: 0; padding-top: 0;">
 
-The authors conducted extensive experiments and found that while Transformers can be effective for certain types of time series data, a simple linear model outperformed them in every test case. Why do you think that is?
+The authors conducted extensive experiments and found that while Transformers can be effective for certain types of time series data, a simple linear model outperformed them in every Long-Term Time Series Forecasting (LSTF) test case. 
+
+Why do you think that is?
 
 </div>
 <div class="c2" style = "width: 50%">
 
 <div style='text-align: center;'>
-   <img src='https://storage.googleapis.com/slide_assets/linear_model.png' style='border-radius: 10px;'>
-   <p style='font-size: 0.6em; color: grey;'>Zeng 2022</p>
+   <img src='https://storage.googleapis.com/slide_assets/linear_model.png' style='border-radius: 10px; width: 70%;'>
+   <p style='font-size: 0.6em; color: grey; margin: 0; padding: 0;'>Zeng 2022</p>
 </div>
 
 </div>
@@ -613,7 +596,6 @@ The authors conducted extensive experiments and found that while Transformers ca
 <!--s-->
 
 ## Are Transformers Effective for Time Series Forecasting?
-[[original_paper](https://arxiv.org/pdf/2205.13504)]
 
 <div style='text-align: center;'>
    <img src='https://storage.googleapis.com/slide_assets/linear_comparisons.png' style='border-radius: 10px;'>
@@ -623,7 +605,6 @@ The authors conducted extensive experiments and found that while Transformers ca
 <!--s-->
 
 ## Vanilla Linear Model
-[[original_paper](https://arxiv.org/pdf/2205.13504)]
 
 The baseline model Zeng et al (2022) used for comparison is a simple linear model. This model is a straightforward approach to time series forecasting, where the future value is predicted as a linear combination of past values. Two variants of the linear model (N and D) are used to compare the performance of the Transformer-based models.
 
@@ -637,7 +618,7 @@ The baseline model Zeng et al (2022) used for comparison is a simple linear mode
 ## D-Linear Model
 [[original_paper](https://arxiv.org/pdf/2205.13504)]
 
-The D-Linear model is a variant of the linear model that incorporates a trend component. The D-Linear model decomposes a raw data input into a trend component by a moving average kernel and a remainder (seasonal) component. Then, two one-layer linear layers are applied to each component, and we sum up the two features to get the final prediction.
+The D-Linear model is a variant of the linear model that incorporates a trend component. The D-Linear model decomposes a raw data input into a trend component by a moving average kernel and a remainder (seasonal) component. Then, two linear layers are applied to each component, and we sum up the two features to get the final prediction.
 
 D-Linear models are simple and effective, and should be considered when you have a strong trend component in your time series data.
 
@@ -683,6 +664,17 @@ TiDE (Time-series Dense Encoder) is a deep learning model that utilizes a dense 
 
 <!--s-->
 
+## Honorable Mentions
+
+| Model | Paper |
+| --- | --- |
+| TSMixer | TSMixer: Lightweight MLP-Mixer Model for Multivariate Time Series Forecasting [[paper](https://arxiv.org/pdf/2306.09364v4)] |
+| PatchTST | A Time Series is Worth 64 Words: Long Term Forecasting with Transformers [[paper](https://arxiv.org/pdf/2211.14730v2)] |
+| N-HiTS | N-HiTS: Neural Hierarchical Interpolation for Time Series Forecasting [[paper](https://arxiv.org/abs/2201.12886)] | 
+| SegRNN | SegRNN: Segment Recurrent Neural Network for Long-Term Time Series Forecasting [[paper](https://arxiv.org/pdf/2308.11200v1)] |
+
+<!--s-->
+
 <div class = "col-wrapper">
   <div class="c1 col-centered">
     <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
@@ -703,6 +695,8 @@ TiDE (Time-series Dense Encoder) is a deep learning model that utilizes a dense 
 <div class="header-slide">
 
 # Forecasting Competition & Project Review
+
+## [[click_here_for_colab](https://colab.research.google.com/drive/1VDcldR1CTBkoYpc-JVydRm-8gtpfc9-T?usp=sharing)]
 
 </div>
 
