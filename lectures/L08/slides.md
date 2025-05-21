@@ -48,6 +48,8 @@ revealOptions:
 - Project Part II is due June 4th @ 11:59 PM.
    - Proposals looked great ! 
 
+- Presentations will be on **June 4th**.
+   - If selected, you will present your project in class for extra credit.
 
 <!--s-->
 
