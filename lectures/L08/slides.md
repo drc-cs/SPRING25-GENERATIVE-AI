@@ -83,7 +83,7 @@ revealOptions:
 Recall that a Variational Autoencoder (VAE) is a generative model that learns to encode data into a latent space and then decode it back to the original data space. The VAE consists of two main components: the encoder and the decoder.
 
 <div style='text-align: center;'>
-   <img src='https://storage.googleapis.com/slide_assets/cvae/cvae_1.png' style='border-radius: 10px; width: 80%;'>
+   <img src='https://storage.googleapis.com/slide_assets/cvae/cvae_1.png' style='border-radius: 10px; width: 60%;'>
    <p style='font-size: 0.6em; color: grey; margin: 0px;'>Dykeman 2016</p>
 </div>
 
