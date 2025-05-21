@@ -149,7 +149,7 @@ But now, something interesting happens to our latent space. Sampling the same po
 Now our latent space contains information that is not class-spcific. In this case, it may contain other information, like stroke width or the angle the number is written. 
 
 <div style='text-align: center;'>
-   <img src='https://storage.googleapis.com/slide_assets/cvae/cvae_8.png' style='border-radius: 10px; width: 60%;'>
+   <img src='https://storage.googleapis.com/slide_assets/cvae/cvae_8.png' style='border-radius: 10px; width: 40%;'>
    <p style='font-size: 0.6em; color: grey; margin: 0px;'>Dykeman 2016</p>
 </div>
 
@@ -513,7 +513,7 @@ We need a model to convert the text embedding into an image embedding. This mode
 DALL.E 2 authors tried two different approaches for this task: a diffusion model and an autoregressive model. The diffusion model was found to be more effective, so they used it as the prior.
 
 <div style='text-align: center;'>
-   <img src='https://storage.googleapis.com/slide_assets/diffusion_prior.png' style='border-radius: 10px;'>
+   <img src='https://storage.googleapis.com/slide_assets/diffusion_prior.png' style='border-radius: 10px; width: 40%;'>
    <p style='font-size: 0.6em; color: grey;'>Foster 2023</p>
 </div>
 
@@ -524,7 +524,7 @@ DALL.E 2 authors tried two different approaches for this task: a diffusion model
 After the prior, DALL.E 2 has a decoder. With the image embedding prediction that we get from the prior, we can concatenate the image embedding with the text embedding to condition our diffusion-based decoder.
 
 <div style='text-align: center;'>
-   <img src='https://storage.googleapis.com/slide_assets/dalle_decoder.png' style='border-radius: 10px; width: 60%;'>
+   <img src='https://storage.googleapis.com/slide_assets/dalle_decoder.png' style='border-radius: 10px; width: 40%;'>
    <p style='font-size: 0.6em; color: grey; margin: 0px;'>Foster 2023</p>
 </div>
 
