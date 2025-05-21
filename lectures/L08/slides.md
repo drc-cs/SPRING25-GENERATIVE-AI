@@ -41,6 +41,16 @@ revealOptions:
 
 <!--s-->
 
+## Announcements
+
+- Exam will be on **June 4th**.
+
+- Project Part II is due June 4th @ 11:59 PM.
+   - Proposals looked great ! 
+
+
+<!--s-->
+
 <div class = "col-wrapper">
   <div class="c1 col-centered">
     <div style="font-size: 0.8em; left: 0; width: 60%; position: absolute;">
