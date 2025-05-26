@@ -889,6 +889,7 @@ Where:
 
 <div style='text-align: center;'>
    <img src='https://storage.googleapis.com/slide_assets/hyperband_example.png' style='border-radius: 10px;'>
+   ** Different implementation than the pseudocode. **
 </div>
 
 </div>
