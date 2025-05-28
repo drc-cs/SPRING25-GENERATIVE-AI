@@ -889,12 +889,42 @@ Where:
 
 <div style='text-align: center;'>
    <img src='https://storage.googleapis.com/slide_assets/hyperband_example.png' style='border-radius: 10px;'>
-   ** Different implementation than the pseudocode. **
 </div>
+
+<span style="font-size: 0.7em; text-align: center;">
+
+\**Different implementation than the pseudocode. The authors didn't specify this. Go to next slide to see pseudocode implementation.*
+
+</span>
+
 
 </div>
 </div>
 
+
+<!--s-->
+
+## Hyperband Example
+
+<div class = "col-wrapper">
+<div class="c1" style = "width: 50%">
+
+<div style='text-align: center;'>
+   <img src='https://storage.googleapis.com/slide_assets/hyperband.png' style='border-radius: 10px;'>
+   <p style='font-size: 0.6em; color: grey; margin: 0px;'>Li 2018</p>
+</div>
+
+</div>
+<div class="c2" style = "width: 50%">
+
+### Pseudocode implementation
+<div style='text-align: center; width: 60%;'>
+   <img src='https://storage.googleapis.com/slide_assets/hyperband_from_pseudo.png' style='border-radius: 10px;'>
+</div>
+
+
+</div>
+</div>
 
 <!--s-->
 
