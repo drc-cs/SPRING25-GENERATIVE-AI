@@ -15,7 +15,7 @@ Welcome to Generative AI! This course is designed to provide a comprehensive ove
 | 6    | 05.07.2025 | [Autoregressive Text Models](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L06/#/) [[download_slides](https://storage.googleapis.com/slide_assets/GenAI_Lectures/L06.pdf)] | Text | RNN/LSTM, transformers, distributed text processing, R.A.G. | GPT, BERT, T5 | Image Project |
 | 7    | 05.14.2025 | [Forecast Models](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L07/#/)  [[download_slides](https://storage.googleapis.com/slide_assets/GenAI_Lectures/L07.pdf)] | Signal | Forecasting, Traditional (SARIMAX), Modern (XGBoost, TiDE) | SARIMAX, XGBoost, TiDE | Text Proposal |
 | 8    | 05.21.2025 | [Conditional & Multimodal Model Strategies](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L08/#/) [[download_slides](https://storage.googleapis.com/slide_assets/GenAI_Lectures/L08.pdf)] | Text + Image | Image + Text models approaches | CLIP, DALL-E, BLIP | -- |
-| 9    | 05.28.2025 | Creative Applications & Societal Implications. Exam Review. | Text + Image | Generative AI in art, music, and literature, ethical considerations | GPT Storyteller, MusicGen | -- |
+| 9    | 05.28.2025 | [World Models & Exam Review](https://drc-cs.github.io/SPRING25-GENERATIVE-AI/lectures/L09/#/) [[download_slides](https://storage.googleapis.com/slide_assets/GenAI_Lectures/L09.pdf)] | Text + Image | Generative AI in World Models | World Model (RNN-MDN) | -- |
 | 10   | 06.04.2025 | Demo Day & Final Exam | Text + Image | Demonstration of top-voted generative AI projects and comprehensive final exam | -- | Text Project |
 
 ## Grading
